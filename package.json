@@ -1,0 +1,14 @@
+{
+  "name": "pws-parse-server",
+  "description": "Parse Server on Pivotal Web Services",
+  "version": "0.0.1",
+  "author": "Pivotal Software Inc.",
+  "private": true,
+  "engines": {
+    "node": "4.2.5"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "parse-server": "^2.0.1"
+  }
+}

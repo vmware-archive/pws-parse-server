@@ -1,0 +1,10 @@
+---
+applications:
+  - name: parse-server
+    memory: 256M
+    instances: 1
+    host: parse-server-${random-word}
+    env:
+      APP_ID: 'APP-ID'
+      MASTER_KEY: 'MASTER-KEY'
+      FILE_KEY: ''
