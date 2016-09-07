@@ -24,6 +24,29 @@ cd pws-parse-server
 cf push
 ```
 
+### Live Query Support
+
+If you wish to use Parse's Live Query feature (e.g., for real-time updates in your application), update `server.js` with an array indicating the classes for which you would like Live Query support, and create a new instance of the LiveQueryServer object.
+
+```
+var parseServer = new ParseServer({
+  ...
+  liveQuery: {
+    classNames: ["Friends", "Photos"] // List of classes to support for query subscriptions
+  }
+});
+
+...
+
+var parseLiveQueryServer = ParseServer.createLiveQueryServer(server); // where server is your Express application.
+```
+
+In your client Parse application, specify the URL of your Parse Live Query server, making sure to use the `wss` protocol and specifying `4443` as the port.
+
+```
+Parse.liveQueryServerURL = 'wss://your-server-url.cfapps.io:4443';
+```
+
 #### MongoDB backend
 
 [Parse Server](https://github.com/ParsePlatform/parse-server) uses [MongoDB](https://www.mongodb.org/) as the backend database, so we will need to create a MongoDB database using the PWS service's [marketplace](https://docs.run.pivotal.io/marketplace/) and bind it to the application:
