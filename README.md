@@ -1,3 +1,5 @@
+# pws-parse-server is no longer actively maintained by VMware.
+
 # Hosting Parse Server on Pivotal Web Services
 
 This is an example on how to deploy [Parse Server](https://github.com/ParsePlatform/parse-server) on [Pivotal Web Services](https://run.pivotal.io/).
